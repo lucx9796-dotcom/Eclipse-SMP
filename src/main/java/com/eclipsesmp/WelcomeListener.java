@@ -18,6 +18,8 @@ public class WelcomeListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         if (!plugin.getConfig().getBoolean("welcome.enabled", true)) return;
         Player p = e.getPlayer();
+        // Só na primeira vez que o jogador entra no servidor
+        if (plugin.getConfig().getBoolean("welcome.only-first-join", true) && p.hasPlayedBefore()) return;
         // 1s depois do login, para aparecer depois das mensagens de outros plugins
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (!p.isOnline()) return;

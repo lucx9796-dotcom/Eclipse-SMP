@@ -77,6 +77,7 @@ protection:
 # Mensagem de boas-vindas (ao entrar). Cores com &. {minutes} = minutos de proteção
 welcome:
   enabled: true
+  only-first-join: true   # false = mostra toda vez que o jogador entrar
   lines:
     - ""
     - "&4☠ &6&lSeja bem-vindo ao servidor &c&lEclipse SMP&6&l!"
