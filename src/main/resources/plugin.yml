@@ -1,0 +1,45 @@
+name: EclipseSMP
+main: com.eclipsesmp.EclipseSMP
+version: ${project.version}
+api-version: '1.21.11'
+author: Eclipse SMP
+description: Plugin oficial da Eclipse SMP
+commands:
+  immortal:
+    description: Gerencia jogadores imortais
+    usage: /immortal <player|set|unset|toggle|list|reload>
+    permission: eclipse.immortal
+  revive:
+    description: Revive (desbane) um jogador morto
+    usage: /revive <player>
+    permission: eclipse.revive
+  nickname:
+    description: Altera o apelido de um jogador
+    usage: /nickname <player> <apelido|reset>
+    permission: eclipse.nickname
+    aliases: [nick]
+  skinset:
+    description: Altera a skin de um jogador
+    usage: /skinset <player> <nome da skin|reset>
+    permission: eclipse.skinset
+  deathsound:
+    description: Configura o som de morte
+    usage: /deathsound <on|off|set|volume|pitch|global|test|reset|status>
+    permission: eclipse.deathsound
+permissions:
+  eclipse.immortal:
+    default: op
+  eclipse.revive:
+    default: op
+  eclipse.nickname:
+    default: op
+  eclipse.skinset:
+    default: op
+  eclipse.deathsound:
+    default: op
+  eclipse.plugins.bypass:
+    description: Ver a lista real de plugins em /plugins
+    default: false
+  eclipse.deathban.exempt:
+    description: Não ser banido ao morrer
+    default: false

@@ -1,0 +1,57 @@
+# ===== Eclipse SMP =====
+
+# Esconde os outros plugins: /plugins, /pl e /plugin mostram só a Eclipse SMP.
+hide-plugins:
+  enabled: true
+  display-name: "Eclipse SMP"
+  commands: [plugins, pl, plugin]
+
+immortal:
+  # Vida mínima de um imortal (1.0 = meio coração, 2.0 = 1 coração)
+  min-health: 1.0
+
+death:
+  # Dropa a cabeça do jogador no local da morte
+  drop-head: true
+  # Bane o jogador imediatamente ao morrer (modo hardcore)
+  ban: true
+  # {player} = nome do jogador
+  ban-reason: "&cVocê morreu! Peça para alguém colocar sua cabeça no chão."
+  # Efeito de raio ao reviver
+  revive-lightning: true
+
+# Som de morte (padrão: surgimento do Wither no local da morte)
+death-sound:
+  enabled: true
+  sound: "entity.wither.spawn"
+  volume: 4.0
+  pitch: 1.0
+  # true = todos os jogadores ouvem de qualquer lugar
+  global: false
+
+messages:
+  prefix: "&8[&5Eclipse&8] &r"
+  no-player: "&cJogador não encontrado."
+  only-online: "&cO jogador precisa estar online."
+  immortal-on: "&a{player} agora é imortal."
+  immortal-off: "&e{player} não é mais imortal."
+  immortal-list-empty: "&7Nenhum jogador imortal."
+  immortal-list: "&dImortais ({count}): &f{players}"
+  reloaded: "&aConfiguração e dados recarregados."
+  revived: "&a{player} foi revivido e desbanido!"
+  revived-broadcast: "&6{player} foi revivido!"
+  revive-not-listed: "&e{player} não estava na lista de mortos; executei o desbanimento mesmo assim."
+  nick-set: "&aApelido de {player} alterado para {nick}."
+  nick-reset: "&aApelido de {player} restaurado."
+  nick-invalid: "&cApelido inválido (3-16 caracteres: letras, números e _)."
+  skin-loading: "&7Buscando skin de {skin}..."
+  skin-set: "&aSkin de {player} alterada para {skin}."
+  skin-reset: "&aSkin de {player} restaurada."
+  skin-fail: "&cNão consegui buscar a skin '{skin}'."
+  sound-status: "&dSom de morte: &f{sound} &7(ativo: {enabled}, volume: {volume}, pitch: {pitch}, global: {global})"
+  sound-set: "&aSom de morte alterado para {sound}."
+  sound-invalid: "&cNome de som inválido."
+  sound-on: "&aSom de morte ativado."
+  sound-off: "&eSom de morte desativado."
+  sound-value: "&a{key} alterado para {value}."
+  usage: "&cUso: {usage}"
