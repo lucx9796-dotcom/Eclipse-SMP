@@ -23,6 +23,7 @@ public class EclipseSMP extends JavaPlugin {
 
     private DataStore data;
     private IdentityManager identity;
+    private ProtectionManager protection;
     private NamespacedKey headKey;
 
     @Override
@@ -31,18 +32,29 @@ public class EclipseSMP extends JavaPlugin {
         data = new DataStore(this);
         data.load();
         identity = new IdentityManager(this);
+        protection = new ProtectionManager(this);
         headKey = new NamespacedKey(this, "head_owner");
 
         var pm = getServer().getPluginManager();
         pm.registerEvents(new DeathListener(this), this);
         pm.registerEvents(new PluginHideListener(this), this);
         pm.registerEvents(identity, this);
+        pm.registerEvents(protection, this);
+        pm.registerEvents(new WelcomeListener(this), this);
+        protection.start();
 
         register("immortal", new ImmortalCommand(this));
         register("revive", new ReviveCommand(this));
         register("nickname", new NicknameCommand(this));
         register("skinset", new SkinSetCommand(this));
         register("deathsound", new DeathSoundCommand(this));
+        register("protection", new ProtectionCommand(this));
+    }
+
+    @Override
+    public void onDisable() {
+        if (protection != null) protection.stop();
+        else if (data != null) data.save();
     }
 
     private void register(String name, TabExecutor executor) {
@@ -60,6 +72,7 @@ public class EclipseSMP extends JavaPlugin {
 
     public DataStore data() { return data; }
     public IdentityManager identity() { return identity; }
+    public ProtectionManager protection() { return protection; }
     public NamespacedKey headKey() { return headKey; }
 
     /** Mensagem de config.yml com prefixo e placeholders {chave} -> valor. */
@@ -99,6 +112,7 @@ public class EclipseSMP extends JavaPlugin {
         String name = data.removeDead(id);
         if (name == null) return null;
         pardon(name);
+        if (getConfig().getBoolean("protection.on-revive", true)) protection.grant(id);
         return name;
     }
 

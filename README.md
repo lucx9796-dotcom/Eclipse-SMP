@@ -7,6 +7,7 @@ Plugin oficial da Eclipse SMP para Paper (1.21.11 a 26.x).
 - **Imortalidade** (`/immortal`): o jogador toma dano, mas nunca fica abaixo de uma vida mínima configurável (padrão: meio coração)
 - **Modo hardcore**: ao morrer o jogador dropa a cabeça e é banido na hora; colocar a cabeça no chão desbane
 - **/revive** `<player>`: alternativa para administradores
+- **Proteção inicial** de 15 min (primeiro login e ao reviver) + mensagem de boas-vindas
 - **Identidade**: `/nickname` e `/skinset`
 - **Som de morte** configurável (padrão: spawn do Wither no local da morte) com `/deathsound`
 
@@ -17,6 +18,7 @@ Plugin oficial da Eclipse SMP para Paper (1.21.11 a 26.x).
 | `/revive <player>` | `eclipse.revive` |
 | `/nickname <player> <apelido\|reset>` | `eclipse.nickname` |
 | `/skinset <player> <skin\|reset>` | `eclipse.skinset` |
+| `/protection <give\|remove\|check> <player>` | `eclipse.protection` |
 | `/deathsound <on\|off\|set\|volume\|pitch\|global\|test\|reset\|status>` | `eclipse.deathsound` |
 
 Outras permissões: `eclipse.plugins.bypass` (ver a lista real de plugins) e `eclipse.deathban.exempt` (não ser banido ao morrer).

@@ -26,7 +26,13 @@ commands:
     description: Configura o som de morte
     usage: /deathsound <on|off|set|volume|pitch|global|test|reset|status>
     permission: eclipse.deathsound
+  protection:
+    description: Gerencia a proteção inicial dos jogadores
+    usage: /protection <give|remove|check> <player>
+    permission: eclipse.protection
 permissions:
+  eclipse.protection:
+    default: op
   eclipse.immortal:
     default: op
   eclipse.revive:

@@ -55,3 +55,35 @@ messages:
   sound-off: "&eSom de morte desativado."
   sound-value: "&a{key} alterado para {value}."
   usage: "&cUso: {usage}"
+  protection-start: "&a✔ Você está protegido por &e{time}&a! Aproveite para se preparar."
+  protection-remaining: "&aVocê ainda tem &e{time} &ade proteção."
+  protection-end: "&c☠ Sua proteção acabou! Agora começa o &4&lHardcore de verdade&c. Boa sorte!"
+  protection-bar: "&aProteção &8» &e{time}"
+  protection-pvp: "&cVocê está protegido e não pode ferir outros jogadores."
+  protection-given: "&a{player} recebeu {minutes} minutos de proteção."
+  protection-removed: "&eA proteção de {player} foi removida."
+  protection-status: "&d{player}: &f{time} de proteção restante."
+  protection-none: "&7{player} não tem proteção."
+
+# Proteção inicial (o tempo só conta com o jogador online)
+protection:
+  enabled: true
+  minutes: 15
+  on-first-join: true   # ao entrar pela primeira vez
+  on-revive: true       # ao ser revivido pela cabeça / /revive
+  block-pvp: true       # protegido não consegue ferir outros jogadores
+  bossbar: true
+
+# Mensagem de boas-vindas (ao entrar). Cores com &. {minutes} = minutos de proteção
+welcome:
+  enabled: true
+  lines:
+    - ""
+    - "&4☠ &6&lSeja bem-vindo ao servidor &c&lEclipse SMP&6&l!"
+    - ""
+    - "&7Este é um servidor &4&lHardcore&7, onde, se você morrer, a única forma de"
+    - "&7reviver é alguém &ecolocar sua cabeça no chão&7. Assim, você será"
+    - "&7automaticamente &adesbanido &7e terá mais &b{minutes} minutos de segurança&7."
+    - ""
+    - "&7Porém, após esses &b{minutes} minutos&7, começa o &4&lHardcore de verdade&c! &4☠"
+    - ""
