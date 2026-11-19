@@ -5,7 +5,7 @@ Plugin oficial da Eclipse SMP para Paper (1.21.11 a 26.x).
 ## Recursos
 - **/plugin, /plugins, /pl** mostram apenas "Eclipse SMP"
 - **Imortalidade** (`/immortal`): o jogador toma dano, mas nunca fica abaixo de uma vida mínima configurável (padrão: meio coração)
-- **Modo hardcore**: ao morrer o jogador dropa a cabeça e é banido na hora; colocar a cabeça no chão desbane
+- **Vidas** (padrão 3): cada morte tira 1 vida; ao perder a última o jogador dropa a cabeça e é banido na hora; colocar a cabeça no chão desbane
 - **/revive** `<player>`: alternativa para administradores
 - **Proteção inicial** de 15 min (primeiro login e ao reviver) + mensagem de boas-vindas
 - **Identidade**: `/nickname` e `/skinset`
@@ -15,6 +15,7 @@ Plugin oficial da Eclipse SMP para Paper (1.21.11 a 26.x).
 | Comando | Permissão |
 |---|---|
 | `/immortal <player\|set\|unset\|toggle\|list\|reload>` | `eclipse.immortal` |
+| `/lives [player]` (admin: `set\|add\|remove\|reset`) | `eclipse.lives.admin` (só para o admin) |
 | `/revive <player>` | `eclipse.revive` |
 | `/nickname <player> <apelido\|reset>` | `eclipse.nickname` |
 | `/skinset <player> <skin\|reset>` | `eclipse.skinset` |
